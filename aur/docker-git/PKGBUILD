@@ -20,7 +20,7 @@ arch=(i686 'x86_64')
 url="https://github.com/docker/docker"
 license=('Apache')
 depends=('bridge-utils' 'iproute2' 'device-mapper' 'sqlite' 'systemd')
-makedepends=('git' 'go' 'btrfs-progs' 'go-md2man')
+makedepends=('git' 'btrfs-progs' 'go-md2man')
 backup=(etc/sysctl.d/docker.conf)
 provides=('docker')
 conflicts=('docker')
@@ -56,6 +56,7 @@ build() {
   #cd "$_magic/docker"
   #export GOPATH="$srcdir:$srcdir/$_magic/docker/vendor"
   cd docker
+  git checkout 786b29d
   export AUTO_GOPATH=1
   ./hack/make.sh dynbinary
   for i in man/*.md; do

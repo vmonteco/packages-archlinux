@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 ExecStartPre=/usr/bin/mount --make-rprivate /
-ExecStart=/usr/bin/docker daemon
+ExecStart=/usr/bin/docker -d --exec-opt native.cgroupdriver=cgroupfs
 
 [Install]
 WantedBy=multi-user.target
