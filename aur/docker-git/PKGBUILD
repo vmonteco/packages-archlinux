@@ -16,7 +16,7 @@ pkgver=1.9.0.dev.16580.729c9a9
 pkgrel=1
 epoch=1
 pkgdesc='Pack, ship and run any application as a lightweight container'
-arch=(i686 'x86_64')
+arch=(i686 'x86_64' 'armv6h')
 url="https://github.com/docker/docker"
 license=('Apache')
 depends=('bridge-utils' 'iproute2' 'device-mapper' 'sqlite' 'systemd')
@@ -32,7 +32,7 @@ source=("git+https://github.com/docker/docker.git"
         docker.conf
         )
 md5sums=('SKIP'
-         'f95610c9cb86cb617371040dad5b95d3'
+         '9c8f77f66e790a6b27285b5fb517bd8e'
          '1a8e60447794b3c4f87a2272cc9f144f'
          '9bce988683771fb8262197f2d8196202')
 install='docker.install'
